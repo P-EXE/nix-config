@@ -1,0 +1,18 @@
+scheme: "Monokai Pro (FiLter: Spectrum)"
+author: "Paul"
+base00: "222222" #BG
+base01: "363537" #BG+1
+base02: "525053" #BG+2
+base03: "69676c" #FG-4
+base04: "8b888f" #FG-3
+base05: "bab6bf" #FG-2
+base06: "f7f1ff" #FG-1
+base07: "fbf8ff" #FG
+base08: "ffffff" #White
+base09: "fc618d" #Red
+base0A: "fd9353" #Orange
+base0B: "fce566" #Yellow
+base0C: "7bd88f" #Green
+base0D: "5ad4e6" #Blue
+base0E: "948ae3" #Purple
+base0F: "fc618d" #Pink

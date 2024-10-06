@@ -1,0 +1,12 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 9px;
+}
+
+#disk,
+#memory,
+#cpu,
+#network,
+#pulseaudio {
+  color: #ff0000;
+}

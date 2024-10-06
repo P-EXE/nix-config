@@ -1,0 +1,19 @@
+{ config, ... }:
+
+{
+  wayland.windowManager.hyprland.settings.general = with config.colorScheme.palette; {
+    gaps_in = 8;
+    gaps_out = 16;
+    border_size = 1;
+    layout = "dwindle";
+
+    "col.active_border" = "rgb(${base05}) rgb(${base04}) 45deg";
+    "col.inactive_border" = "rgb(${base00}) rgb(${base01}) 45deg";
+  };
+
+  wayland.windowManager.hyprland.settings.decoration = {
+    rounding = 2;
+  };
+
+  wayland.windowManager.hyprland.settings.animations.enabled = false;
+}
