@@ -6,7 +6,6 @@
     # Essentials
     pkgs.nerdfonts
     pkgs.htop
-    pkgs.git
 
     # Tools
     pkgs.lf

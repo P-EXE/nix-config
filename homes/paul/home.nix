@@ -9,6 +9,7 @@
     ./eww/eww.nix
     ./dunst/dunst.nix
     ./kitty/kitty.nix
+    ./git/git.nix
     ./programs.nix
   ];
 
