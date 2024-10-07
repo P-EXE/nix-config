@@ -10,6 +10,7 @@
     ./dunst/dunst.nix
     ./kitty/kitty.nix
     ./git/git.nix
+    ./virt/virt.nix
     ./programs.nix
   ];
 
