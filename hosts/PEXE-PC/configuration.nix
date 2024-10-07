@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ../virt/virt.nix
     ];
 
   nix.settings = {
@@ -65,14 +66,6 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Display manager
-  #services.greetd.enable = true;
-  #services.greetd.package = pkgs.greetd.tuigreet;
-  #services.greetd.settings.default_session = {
-  #  command = "tuigreet --cmd Hyprland";
-  #  user = "";
-  #};
-
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure keymap in X11
@@ -125,6 +118,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  programs.nix-ld.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

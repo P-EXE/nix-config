@@ -4,7 +4,8 @@
 
   home.packages = with pkgs; [
     jetbrains.rider
-    dotnet-sdk_8
+    dotnetCorePackages.sdk_8_0_1xx
+    #dotnetCorePackages.sdk_9_0
     mono
   ];
 
