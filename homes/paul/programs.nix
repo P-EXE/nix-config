@@ -1,30 +1,35 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
+  home.packages = with pkgs; [
 
     # Essentials
-    pkgs.nerdfonts
-    pkgs.htop
+    nerdfonts
+    htop
 
     # Tools
-    pkgs.lf
-    pkgs.kdePackages.ark
-    pkgs.xfce.thunar
+    lf
+    kdePackages.ark
+    xfce.thunar
+    wineWowPackages.waylandFull
+    winetricks
 
     # Toys
-    pkgs.neofetch
-    pkgs.cbonsai
+    neofetch
+    cbonsai
     
     # Desktop
-    pkgs.chromium
-    pkgs.spotify
-    pkgs.discord
-    pkgs.steam
+    chromium
+    spotify
+    discord
+    steam
     
     # Code
-    pkgs.jetbrains.rider
-    pkgs.jetbrains.rust-rover
+    jetbrains.rider
+    jetbrains.rust-rover
+    jetbrains.clion
+    neovim
+    neovim-qt
 
   ];
 

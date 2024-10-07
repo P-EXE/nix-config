@@ -12,8 +12,28 @@
   };
 
   wayland.windowManager.hyprland.settings.decoration = {
-    rounding = 1;
+    rounding = 2;
+    drop_shadow = false;
+    blur = {
+        enabled = true;
+        size = 32;
+        passes = 3;
+        new_optimizations = true;
+        ignore_opacity = true;
+        xray = false;
+    };
   };
+
+  wayland.windowManager.hyprland.settings.windowrulev2 = [
+    "opacity 0.80 0.60,class:^(.*)$"
+    "opacity 1.00 1.00,class:^(firefox)$"
+    "opacity 1.00 1.00,class:^(chromium)$"
+  ];
+  
+  wayland.windowManager.hyprland.settings.layerrule = [
+    "blur,rofi"
+    "blur,notifications"
+  ];
 
   wayland.windowManager.hyprland.settings.animations.enabled = false;
 }
