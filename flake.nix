@@ -10,6 +10,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/Hyprlock";
 
+    #swww.url = "github:LGFae/swww";
+
     nix-colors.url = "github:misterio77/nix-colors";
   };
 

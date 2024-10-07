@@ -27,7 +27,7 @@
   wayland.windowManager.hyprland.settings.windowrulev2 = [
     "opacity 0.80 0.60,class:^(.*)$"
     "opacity 1.00 1.00,class:^(firefox)$"
-    "opacity 1.00 1.00,class:^(chromium)$"
+    "opacity 1.00 1.00,class:^(chromium-browser)$"
   ];
   
   wayland.windowManager.hyprland.settings.layerrule = [

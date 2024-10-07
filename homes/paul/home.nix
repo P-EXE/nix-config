@@ -21,8 +21,8 @@
     allowUnfreePredicate = (_: true);
   };
 
-  #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
-  colorScheme = inputs.nix-colors.lib.schemeFromYAML "automata" (builtins.readFile ./colors/monokai-spectrum.yaml);
+  #colorScheme = inputs.nix-colors.colorSchemes.dracula;
+  colorScheme = inputs.nix-colors.lib.schemeFromYAML "Monokai (Filter: Spectrum)" (builtins.readFile ./colors/monokai-spectrum.yaml);
   
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;

@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+
+  imports = [
+    ./dev-env/dotnet.nix
+  ];
+
   home.packages = with pkgs; [
 
     # Essentials
@@ -13,8 +18,11 @@
     xfce.thunar
     wineWowPackages.waylandFull
     winetricks
+    pandoc
 
     # Toys
+    swww
+    waypaper
     neofetch
     cbonsai
     
@@ -25,7 +33,6 @@
     steam
     
     # Code
-    jetbrains.rider
     jetbrains.rust-rover
     jetbrains.clion
     neovim

@@ -23,6 +23,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Volumes
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/run/mount/sdb1" = {
+    device = "/dev/sdb1";
+    fsType = "ntfs-3g"; 
+    options = [ "rw" "uid=1000"];
+  };
+
   networking.hostName = "nixos";
 
   # Enable networking

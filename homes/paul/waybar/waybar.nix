@@ -10,11 +10,17 @@
 
     modules-left = [ "wlr/taskbar" ];
     modules-center = [ "hyprland/workspaces" ];
-    modules-right = [ "tray" "disk" "memory" "cpu" "network" "pulseaudio" "clock" ];
+    modules-right = [ "tray" "hyprland/language" "memory" "cpu" "network" "pulseaudio" "clock" ];
     
     tray = {
       spacing = 10;
     };
+
+     "hyprland/language" = {
+        format = "{}";
+        format-de = "DE";
+        format-en = "US";
+      }; 
   };
 
   programs.waybar.style = with config.colorScheme.palette; ''
@@ -57,7 +63,7 @@
     padding: 6px 0px 6px 6px;
   }
 
-  #tray, #disk, #memory, #cpu, #network, #pulseaudio, #clock {
+  #tray, #language, #memory, #cpu, #network, #pulseaudio, #clock {
     margin: 2px;
     border: solid 1px #${base01};
     border-radius: 2px;

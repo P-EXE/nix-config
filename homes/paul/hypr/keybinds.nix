@@ -4,6 +4,8 @@
   };
 
   wayland.windowManager.hyprland.settings.input = {
+    kb_layout="us,de";
+    kb_options = "grp:alt_space_toggle";
     repeat_rate = 25;
     repeat_delay = 300;
   };
