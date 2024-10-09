@@ -11,6 +11,7 @@
     # Essentials
     nerdfonts
     htop
+    nvtop
 
     # Tools
     lf

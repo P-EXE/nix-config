@@ -8,6 +8,7 @@
     ./waybar/waybar.nix
     ./eww/eww.nix
     ./dunst/dunst.nix
+    ./udiskie/udiskie.nix
     ./kitty/kitty.nix
     ./git/git.nix
     ./virt/virt.nix
