@@ -11,6 +11,7 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
   };
+  programs.nix-ld.enable = true;
 
   # Nvidia
   services.xserver.videoDrivers = ["nvidia"];
@@ -36,6 +37,23 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  # Enable CUPS printing
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio = { 
+    enable = false;
+    support32Bit = true;
+  };
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
@@ -54,37 +72,18 @@
     LC_TIME = "de_AT.UTF-8";
   };
 
-  security.polkit.enable = true;
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  # Screenshare
-  xdg.portal.wlr.enable = true;
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-  hardware.pulseaudio.support32Bit = true;
+  # Enable Ozone for electron apps
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.paul = {
@@ -103,10 +102,14 @@
     };
   };
 
+  # Enable elevation prompts
+  security.polkit = { 
+    enable = true;
+    package = with pkgs; kdePackages.polkit-kde-agent-1;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  programs.nix-ld.enable = true;
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [

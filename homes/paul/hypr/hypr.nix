@@ -9,7 +9,6 @@
     ./keybinds.nix
     ./startup.nix
     ./portal.nix
-    ./polkit.nix
   ];
 
   wayland.windowManager.hyprland.enable = true;
