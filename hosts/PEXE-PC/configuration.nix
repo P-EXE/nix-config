@@ -24,21 +24,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Volumes
-  boot.supportedFilesystems = [ "ntfs" ];
-  fileSystems."/run/mount/sdb1" = {
-    device = "/dev/sdb1";
-    fsType = "ntfs-3g"; 
-    options = [ "rw" "uid=1000"];
-  };
-
-  networking.hostName = "nixos";
-
   # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  # Enable USB auto mount
-  #services.gvfs.enable = true;
+  # Enable USB
   services.udisks2.enable = true;
 
   # Enable bluetooth
@@ -101,10 +91,6 @@
     isNormalUser = true;
     description = "Paul";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   # Home manager
@@ -117,16 +103,12 @@
     };
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Packages installed in system profile
   environment.systemPackages = with pkgs; [
   ];
 
