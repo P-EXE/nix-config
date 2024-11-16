@@ -26,5 +26,15 @@
         inputs.home-manager.nixosModules.default
       ];
     };
+
+    nixosConfigurations.PEXE-Laptop = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./hosts/PEXE-Laptop/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }
