@@ -75,9 +75,9 @@
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.workserver = {
+  users.users.server = {
     isNormalUser = true;
-    description = "WorkServer";
+    description = "Server";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -87,7 +87,7 @@
       inherit inputs;
     };
     users = {
-      "workserver" = import ../../homes/workserver/home.nix;
+      "server" = import ../../homes/server/home.nix;
     };
   };
 
