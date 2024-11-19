@@ -10,7 +10,7 @@
 
     modules-left = [ "wlr/taskbar" ];
     modules-center = [ "hyprland/workspaces" ];
-    modules-right = [ "tray" "hyprland/language" "memory" "cpu" "network" "pulseaudio" "clock" ];
+    modules-right = [ "tray" "hyprland/language" "memory" "cpu" "pulseaudio" "battery" "clock" ];
     
     tray = {
       spacing = 10;
@@ -63,7 +63,7 @@
     padding: 6px 0px 6px 6px;
   }
 
-  #tray, #language, #memory, #cpu, #network, #pulseaudio, #clock {
+  #tray, #language, #memory, #cpu, #network, #pulseaudio, #battery, #clock {
     margin: 2px;
     border: solid 1px #${base01};
     border-radius: 2px;

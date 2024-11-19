@@ -36,5 +36,15 @@
         inputs.home-manager.nixosModules.default
       ];
     };
+
+    nixosConfigurations.PEXE-WorkServer = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./hosts/PEXE-WorkServer/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }

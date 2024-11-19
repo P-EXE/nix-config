@@ -1,49 +1,47 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-    ];
+  ];
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
   };
-  programs.nix-ld.enable = true;
  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  networking.hostName = "nixos";
+  networking.hostName = "PEXE-WorkServer";
   networking.networkmanager.enable = true;
 
   # Enable USB
   services.udisks2.enable = true;
 
   # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  #hardware.bluetooth.enable = true;
+  #hardware.bluetooth.powerOnBoot = true;
+  #services.blueman.enable = true;
 
   # Enable CUPS printing
-  services.printing.enable = true;
+  #services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio = { 
-    enable = false;
-    support32Bit = true;
-  };
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
+  #hardware.pulseaudio = { 
+  #  enable = false;
+  #  support32Bit = true;
+  #};
+  #security.rtkit.enable = true;
+  #services.pipewire = {
+  #  enable = true;
+  #  alsa.enable = true;
+  #  alsa.support32Bit = true;
+  #  pulse.enable = true;
+  #  jack.enable = true;
+  #};
 
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
@@ -71,15 +69,15 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Enable Ozone for electron apps
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.paul = {
+  users.users.workserver = {
     isNormalUser = true;
-    description = "Paul";
+    description = "WorkServer";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -89,15 +87,15 @@
       inherit inputs;
     };
     users = {
-      "paul" = import ../../homes/paul/home.nix;
+      "workserver" = import ../../homes/workserver/home.nix;
     };
   };
 
   # Enable elevation prompts
-  security.polkit = { 
-    enable = true;
-    #package = with pkgs; kdePackages.polkit-kde-agent-1;
-  };
+  #security.polkit = { 
+  #  enable = true;
+  #  #package = with pkgs; kdePackages.polkit-kde-agent-1;
+  #};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -117,7 +115,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

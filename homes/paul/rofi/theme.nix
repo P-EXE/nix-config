@@ -20,7 +20,7 @@
     "window" = {
       fullscreen = false;
       height = mkLiteral "50%";
-      width = mkLiteral "25%";
+      width = mkLiteral "50%";
       border = mkLiteral "1px solid";
       border-radius = mkLiteral "2px";
       border-color = mkLiteral "#${base0B}";

@@ -12,6 +12,7 @@
     nerdfonts
     htop
     nvtop
+    dconf
 
     # Tools
     lf
